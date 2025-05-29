@@ -1,0 +1,81 @@
+$padding1280: calc(10px + (40 - 10) * ((100vw - 320px) / (1280 - 320)));
+$paddingBnt: calc(15px + (20 - 15) * ((100vw - 320px) / (1280 - 320)));
+$font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (1280 - 320)));
+$grayscale: grayscale(70%);
+
+@mixin simonTitle {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(17px + (30 - 17) * ((100vw - 320px) / (1280 - 320)));
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@mixin roundText {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: normal;
+  font-size: $font-size;
+  color: #fff;
+}
+
+@mixin simonButton {
+  width: 100%;
+  height: calc(35px + (50 - 35) * ((100vw - 320px) / (1280 - 320)));
+  max-width: calc(100px + (150 - 100) * ((100vw - 320px) / (1280 - 320)));
+  background: #dfd5cb;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: $font-size;
+  text-transform: uppercase;
+}
+
+@mixin levelButton {
+  max-width: calc(100px + (150 - 100) * ((100vw - 320px) / (1280 - 320)));
+  padding: $paddingBnt;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: $font-size;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  color: #000;
+  background: linear-gradient(144deg, #00ddeb, #5b42f3 50%, #af40ff);
+  filter: grayscale(70%);
+  transition: all 0.3s;
+}
+
+@mixin keyboardElem {
+  background: linear-gradient(144deg, #00ddeb, #5b42f3 50%, #af40ff);
+  padding: calc(5px + (10 - 5) * ((100vw - 320px) / (1280 - 320)))
+    calc(10px + (15 - 10) * ((100vw - 320px) / (1280 - 320)));
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: $font-size;
+  filter: $grayscale;
+}
+
+@mixin keyboardInput {
+  pointer-events: none;
+  opacity: 0;
+  background: #fff;
+  max-width: 200px;
+  flex-shrink: 0;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: $font-size;
+  padding: 10px 14px;
+  border-radius: 30px;
+  text-align: center;
+}

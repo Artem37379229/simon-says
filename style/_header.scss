@@ -1,0 +1,33 @@
+.header {
+    width: 100%;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__round {
+        @include roundText;
+        transition: opacity .3s ease;
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__title {
+        @include simonTitle;
+        text-align: center;
+    }
+
+    &__repeat {
+        @include roundText;
+        opacity: 0;
+        transition: .3s;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+}

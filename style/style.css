@@ -1,0 +1,360 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+input[type=file] {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Montserrat/static/Montserrat-ExtraBold.ttf") format("truetype");
+}
+body {
+  background: #5c4938;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.simon__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(10px + 30 * (100vw - 320px) / 960);
+}
+
+.header {
+  width: 100%;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__round {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  color: #fff;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.header__round.visible {
+  opacity: 1;
+}
+.header__title {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(17px + 13 * (100vw - 320px) / 960);
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.header__repeat {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+}
+.header__repeat.visible {
+  opacity: 1;
+}
+
+.game-controls {
+  margin-top: 20px;
+  position: relative;
+}
+.game-controls_disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.game-controls__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.game-controls--repeat.disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+.game-controls__button {
+  width: 100%;
+  height: calc(35px + 15 * (100vw - 320px) / 960);
+  max-width: calc(100px + 50 * (100vw - 320px) / 960);
+  background: #dfd5cb;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.level {
+  margin-top: 20px;
+}
+.level__content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.level__content_disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.level__setings {
+  max-width: calc(100px + 50 * (100vw - 320px) / 960);
+  padding: calc(15px + 5 * (100vw - 320px) / 960);
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  color: #000;
+  background: linear-gradient(144deg, #00ddeb, #5b42f3 50%, #af40ff);
+  filter: grayscale(70%);
+  transition: all 0.3s;
+  transition: all 0.3s ease;
+}
+.level_active {
+  filter: grayscale(0);
+}
+
+.keyboard {
+  margin-top: 20px;
+  position: relative;
+}
+.keyboard_disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.keyboard.keyboard_active {
+  opacity: 1;
+}
+.keyboard__num {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: calc(5px + 5 * (100vw - 320px) / 960);
+}
+.keyboard__num.keyboard__num_active {
+  display: flex;
+}
+.keyboard__letters {
+  opacity: 0;
+}
+.keyboard__letters.keyboard_active {
+  opacity: 1;
+}
+.keyboard__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  -moz-column-gap: calc(3px + 7 * (100vw - 320px) / 960);
+       column-gap: calc(3px + 7 * (100vw - 320px) / 960);
+  margin-bottom: calc(3px + 7 * (100vw - 320px) / 960);
+}
+.keyboard__row.keyboard_active {
+  opacity: 1;
+}
+.keyboard__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  gap: calc(10px + 10 * (100vw - 320px) / 960);
+}
+.keyboard__input-container {
+  display: flex;
+  justify-content: center;
+}
+.keyboard__input {
+  pointer-events: none;
+  opacity: 0;
+  background: #fff;
+  max-width: 200px;
+  flex-shrink: 0;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  padding: 10px 14px;
+  border-radius: 30px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+.keyboard__input.visible {
+  opacity: 1;
+}
+.keyboard__elem {
+  background: linear-gradient(144deg, #00ddeb, #5b42f3 50%, #af40ff);
+  padding: calc(5px + 5 * (100vw - 320px) / 960) calc(10px + 5 * (100vw - 320px) / 960);
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(10px + 5 * (100vw - 320px) / 960);
+  filter: grayscale(70%);
+  transition: all 0.3s ease;
+}
+.keyboard__elem:hover {
+  transform: scale(1.1);
+}
+.keyboard__elem.keyboard__elem_active {
+  filter: grayscale(0);
+}/*# sourceMappingURL=style.css.map */
