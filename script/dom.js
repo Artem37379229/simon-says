@@ -42,6 +42,7 @@ export class DOM {
       "game-controls__button",
       "game-controls--new-game",
       "hidden"
+      
     );
     this.nextBtn.classList.add(
       "game-controls__button",
